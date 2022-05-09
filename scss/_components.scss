@@ -26,5 +26,9 @@
   &__empty {
     color: $color-dark-cyan;
     background-color: lighten($color-dark-cyan, 3%);
+
+    &:hover {
+      background-color: lighten($color-dark-cyan, 3%);
+    }
   }
 }
