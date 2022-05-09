@@ -1,0 +1,30 @@
+@use "base" as *;
+@use "mixin" as *;
+
+.btn {
+  padding: 1.2rem;
+
+  color: $color-dark-cyan;
+  font-size: 2rem;
+  font-weight: $fw-bold;
+  font-family: $font-display;
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: $border-radius-sm;
+  background-color: $color-primary;
+
+  @include for-desktop {
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($color-primary, 20%);
+    }
+  }
+
+  &__empty {
+    color: $color-dark-cyan;
+    background-color: lighten($color-dark-cyan, 3%);
+  }
+}

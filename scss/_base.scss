@@ -1,0 +1,99 @@
+@use "./mixin" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+// VARIABLES-----------------------------------------------
+// BREAK POINTS
+$bp-mobile: 23.5em; //375px
+$bp-desktop: 90em; //1440px
+
+// COLOR
+$color-primary: hsl(172, 67%, 45%);
+$color-dark-cyan: hsl(183, 100%, 15%);
+$color-grayish-cyan-1: hsl(189, 41%, 97%);
+$color-grayish-cyan-2: hsl(185, 41%, 84%);
+$color-grayish-cyan-3: hsl(184, 14%, 56%);
+$color-grayish-cyan-4: hsl(186, 14%, 43%);
+$color-white: hsl(0, 0%, 100%);
+
+// FONT
+$font-display: "Space Mono", monospace;
+$fw-regu: 500;
+$fw-bold: 700;
+
+// BORDER
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-lg: 20px;
+
+// GENERAL SETTING-----------------------------------------------
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  list-style: none;
+  vertical-align: middle;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: $font-display;
+
+  background-color: $color-grayish-cyan-2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  padding-top: 3rem;
+
+  @include for-desktop {
+    justify-content: center;
+  }
+}
+
+input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+
+  font-size: 2rem;
+  font-weight: $fw-bold;
+  color: $color-dark-cyan;
+  font-family: $font-display;
+  text-align: right;
+
+  background-color: darken($color-grayish-cyan-1, 3%);
+
+  border: none;
+  border-radius: $border-radius-sm;
+
+  // outline: none;
+
+  @include for-desktop {
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid $color-primary;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+#active {
+  color: $color-dark-cyan;
+  background-color: lighten($color-primary, 20%);
+}
